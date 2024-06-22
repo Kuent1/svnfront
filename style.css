@@ -1,0 +1,294 @@
+    /* Font Faces */
+@font-face {
+    font-family: "NexaB";
+    src: url("./src/font/Nexa\ Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "NexaL";
+    src: url("./src/font/Nexa\ Light.otf");
+    font-weight: light;
+}
+
+/* Variables */
+:root {
+    --main-font-light: 'NexaL', sans-serif;
+    --main-font-bold: 'NexaB', sans-serif;
+
+    --polymorph-red: #dc1c4c;
+    --polymorph-light-blue: #6ec7f0;
+    --polymorph-medium-blue: #1172b5;
+    --polymorph-dark-blue: #153b5c;
+    --white: #fff;
+    --background-primary: #22232a;
+    --background-secondary: #2d2d34;
+    --background-action: hsla(0, 0%, 45%, .45);
+
+    --box-shadow: hsla(0, 0%, 0%, 0.521) 0px 15px 30px -10px;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--main-font-light);
+    background-color: var(--background-primary);
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--white)
+}
+
+.flex {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.height {
+    height: 95vh;
+}
+
+hr {
+    height: 1px; 
+    border: none; 
+    border-top: 1px solid var(--polymorph-light-blue);
+    margin: 20px 0; 
+}
+
+a {
+    color: inherit;
+    transition: .25s ease-in-out;
+}
+
+a:hover {
+    color: var(--background-action);
+}
+
+a:visited {
+    color: inherit;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    color: var(--white);
+    background-color: var(--background-secondary);
+    border-radius: 5px;
+    font-family: var(--main-font-light);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    font-family: var(--main-font-light);
+    color: var(--white);
+    opacity: 0.80;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px; 
+}
+
+.name input[type="text"] {
+    width: 100%; 
+}
+
+/* Button Styles */
+button {
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    background-color: var(--background-secondary);
+    color: var(--white);
+    font-family: var(--main-font-light);
+}
+
+button:hover {
+    background-color: var(--background-action);
+    box-shadow: var(--box-shadow);
+}
+
+button:active {
+    transform: translateY(1px);
+    background-color: var(--polymorph-dark-blue);
+}
+.password-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-input-container input {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; 
+    width: 1rem;
+    height: 1rem;
+    align-self: center; 
+    filter: invert(.65);
+}
+
+.small {
+    height: 1rem;
+}
+
+/* Heading Styles */
+h1 {
+    font-family: var(--main-font-bold);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Form Styles */
+#usersContainer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.user {
+    margin-bottom: 1rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+.user input[type="text"],
+.user input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccc;
+    border-radius: 5px;
+}
+
+/* Display Box Styles */
+#display {
+    margin-top: 1rem;
+    white-space: pre-line;
+    text-align: center;
+}
+
+#display p {
+    font-family: var(--main-font-light);
+    color: var(--polymorph-dark-blue);
+    white-space: pre-line;
+}
+
+.box {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-card {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-action);
+    border-radius: 5px;
+    transition: 250ms ease-in-out;
+}
+
+.user-card:hover {
+    background-color: var(--background-action);
+    box-shadow: var(--box-shadow);
+}
+
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+footer {
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    background-color: var(--background-primary); 
+    color: #fff;
+    padding: 20px 0; 
+    text-align: center; 
+}
+
+.container {
+    max-width: 960px; 
+    margin: 0 auto; 
+}
+
+/* CSS for loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none; 
+}
+
+/* CSS for loading spinner */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid var(--polymorph-medium-blue); 
+    border-radius: 50%;
+    animation: spin 1s linear infinite; 
+}
+
+/* Animation keyframes for spinning effect */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Confirmation pages specific */
+.logo {
+    margin: 10rem auto 2rem auto;
+    width: 8rem;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        width: 80%;
+    }
+}

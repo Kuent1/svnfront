@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVN Creator - Succès</title>
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flex column">
+        <h1>SVN Creator</h1>
+        <img class="logo" src="/src/img/error-svgrepo-com.svg" alt="Echec">
+        <p>🤷‍♂️ Une erreur s'est produite !🤷‍♂️</p>
+        <ul>
+            <li>
+                <p>Le NAS est-il bien joignable ?</p>
+            </li>
+            <li>
+                <p>Le projet SVN n'existe-t-il pas déjà ?</p>
+            </li>
+        </ul>
+        <a href="index.html">Retour à la page d'accueil</a>
+    </div>
+</body>
+<footer>
+    <div class="container">
+        <p>&copy; <span id="year"></span> <a href="https://www.polymorph.fr/home/" target="_blank">Polymorph</a></p> 
+    </div>
+</footer>
+<script>
+// Get the current year
+const year = new Date().getFullYear();
+// Update the span element with the current year
+document.getElementById('year').textContent = year;
+</script>
+</html>

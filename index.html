@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVN Creator</title>
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flex column">
+        <h1>SVN Creator</h1>
+        <div class="name">
+            <input type="text" id="repoName" class="name" placeholder="Nom du dépot SVN" required>
+            <p class="name">Le lien du dépôt sera:</p>
+            <div id="display">svn://svn.polymorph.fr/<span class="year"></span>_</div>
+        </div>
+        <hr>
+        <div id="userCards" class="user-grid"></div>
+        <div class="file-lock" style="margin: 1rem;">
+            <input type="checkbox" id="fileLock" name="fileLock">
+            <label for="fileLock" style="font-weight: 400;">Activer le verrouillage de fichiers pour le dossier "Graph"</label>
+        </div>
+        <button type="button" id="submit">Créer le dépôt</button>
+        <div class="loading-overlay">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="container">
+        <p>&copy; <span class="year"></span> <a href="https://www.polymorph.fr/home/" target="_blank">Polymorph</a></p> 
+    </div>
+</footer>
+<script src="./src/scripts/healthCheck.js"></script>
+<script src="src/scripts/autoUpdate.js"></script>
+<script src="src/scripts/userCards.js"></script>
+<script src="src/scripts/createUserRepo.js"></script>
+<script>
+// Get the current year
+const year = new Date().getFullYear();
+// Update the span element with the current year
+const yearSpan = document.querySelectorAll('.year');
+yearSpan.forEach(span => {
+    span.textContent = year;
+});
+</script>
+</html>

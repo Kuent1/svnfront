@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVN Creator - Succès</title>
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flex column">
+        <h1>SVN Creator</h1>
+        <img class="logo" src="/src/img/success-svgrepo-com.svg" alt="Succès">
+        <p>Le dépôt SVN a été créé avec succès !</p>
+        <a href="index.html">Retour à la page d'accueil</a>
+    </div>
+</body>
+<footer>
+    <div class="container">
+        <p>&copy; <span id="year"></span> <a href="https://www.polymorph.fr/home/" target="_blank">Polymorph</a></p> 
+    </div>
+</footer>
+<script>
+// Get the current year
+const year = new Date().getFullYear();
+// Update the span element with the current year
+document.getElementById('year').textContent = year;
+</script>
+</html>
