@@ -8,7 +8,9 @@ on:
 
 env:
   AWS_REGION: eu-west-3  # Set your AWS region
-  ECR_REPOSITORY: svnback  # Set your ECR repository name
+  ECR_REPOSITORY: svnfront  # Set your ECR repository name
+  COMMIT_SHA: ${{ github.sha }}
+  IMAGE_TAG: latest
 
 jobs:
   build:
@@ -18,10 +20,6 @@ jobs:
       contents: read
       packages: write
       id-token: write
-
-    strategy:
-      matrix:
-        tag: ["${{ github.sha }}", "latest"]
 
     steps:
       - name: Checkout code
@@ -47,7 +45,9 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ matrix.tag }}
+          tags: |
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ env.COMMIT_SHA }}
 
       - name: Logout from Amazon ECR
         run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com
