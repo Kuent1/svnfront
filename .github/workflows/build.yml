@@ -23,20 +23,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Test just output the message
-        uses: profy12/lowercase-action@0.6
-        id: lowercase_name
-        with:
-          text: |
-            ${{ github.actor }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
