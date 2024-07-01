@@ -12,9 +12,10 @@ function hideLoadingOverlay() {
 
 // Function to ping the SVN API on initial page load
 async function pingSVNAPI() {
+    const backendIp = import.meta.env.BACKEND_IP;
     try {
         showLoadingOverlay();
-        const response = await fetch('http://backend.svn.kuentin.me:3000/ping');
+        const response = await fetch(`http://${backendIp}:3000/ping`);
         if (response.ok) {
             // API is reachable, continue with normal page loading
             hideLoadingOverlay();
