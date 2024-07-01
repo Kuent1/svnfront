@@ -14,7 +14,7 @@ function hideLoadingOverlay() {
 async function pingSVNAPI() {
     try {
         showLoadingOverlay();
-        const response = await fetch('http://dsnas:3000/ping');
+        const response = await fetch('http://backend.svn.kuentin.me:3000/ping');
         if (response.ok) {
             // API is reachable, continue with normal page loading
             hideLoadingOverlay();

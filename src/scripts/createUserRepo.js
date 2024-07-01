@@ -28,7 +28,7 @@ async function createUserRepo() {
         });
 
     try {
-        const response = await fetch('http://dsnas:3000/create', {
+        const response = await fetch('http://backend.svn.kuentin.me:3000/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
