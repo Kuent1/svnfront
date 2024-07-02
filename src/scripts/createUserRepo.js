@@ -16,7 +16,7 @@ async function createUserRepo() {
     const fileLock = fileLockCheckbox.checked;
     const backendIp = import.meta.env.VITE_BACKEND_IP;
 
-    const usersData = await fetch('src/data/users.json').then(response => response.json());
+    const usersData = await fetch('/users.json').then(response => response.json());
 
     const selectedUsers = Array.from(document.querySelectorAll('input[type="checkbox"]:checked:not(#fileLock)'))
         .map(checkbox => {
