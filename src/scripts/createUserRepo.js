@@ -12,13 +12,11 @@ function hideLoadingOverlay() {
 async function createUserRepo() {
     const year = new Date().getFullYear();
     const repoName = document.getElementById('repoName').value;
-    const fileLockCheckbox = document.getElementById('fileLock');
-    const fileLock = fileLockCheckbox.checked;
     const backendIp = import.meta.env.VITE_BACKEND_IP;
 
     const usersData = await fetch('/users.json').then(response => response.json());
 
-    const selectedUsers = Array.from(document.querySelectorAll('input[type="checkbox"]:checked:not(#fileLock)'))
+    const selectedUsers = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
         .map(checkbox => {
             const username = checkbox.value;
             const user = usersData.users.find(user => user.username === username);
@@ -34,7 +32,7 @@ async function createUserRepo() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ repoName: repoName, users: selectedUsers, fileLock: fileLock}),
+            body: JSON.stringify({ repoName: repoName, users: selectedUsers}),
         });
 
         if (response.ok) {
