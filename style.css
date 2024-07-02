@@ -1,13 +1,13 @@
     /* Font Faces */
 @font-face {
     font-family: "NexaB";
-    src: url("./src/font/Nexa\ Bold.otf") format("opentype");
+    src: url("./src/font/NexaBold.otf") format("opentype");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "NexaL";
-    src: url("./src/font/Nexa\ Light.otf") format("opentype");
+    src: url("./src/font/NexaLight.otf") format("opentype");
     font-weight: light;
 }
 

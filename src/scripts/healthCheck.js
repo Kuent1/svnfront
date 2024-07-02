@@ -12,7 +12,8 @@ function hideLoadingOverlay() {
 
 // Function to ping the SVN API on initial page load
 async function pingSVNAPI() {
-    const backendIp = import.meta.env.BACKEND_IP;
+    const backendIp = import.meta.env.VITE_BACKEND_IP;
+    console.log(backendIp)
     try {
         showLoadingOverlay();
         const response = await fetch(`http://${backendIp}:3000/ping`);

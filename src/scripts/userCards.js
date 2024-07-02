@@ -1,6 +1,6 @@
 const userCards = () => {
     // Fetch usernames and passwords from a separate JSON file
-    fetch('src/data/users.json')
+    fetch('/users.json')
     .then(response => response.json())
     .then(data => {
         const userCardsContainer = document.getElementById('userCards');

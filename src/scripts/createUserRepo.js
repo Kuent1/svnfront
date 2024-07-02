@@ -14,7 +14,7 @@ async function createUserRepo() {
     const repoName = document.getElementById('repoName').value;
     const fileLockCheckbox = document.getElementById('fileLock');
     const fileLock = fileLockCheckbox.checked;
-    const backendIp = import.meta.env.BACKEND_IP;
+    const backendIp = import.meta.env.VITE_BACKEND_IP;
 
     const usersData = await fetch('src/data/users.json').then(response => response.json());
 
