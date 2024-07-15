@@ -29,6 +29,29 @@ Créer un fichier .env à la racine du projet avec le contenu suivant:
 VITE_BACKEND_IP=<adresse IP ou FQDN de l'API>
 ```
 
+Créer un fichier `public/user.json`, contenant les utilisateurs de votre organisation.
+
+Utiliser la syntaxe suivante:
+
+```json
+{
+    "users": [
+        {
+            "username": "user1",
+            "password": "password1"
+        },
+        {
+            "username": "user2",
+            "password": "password2"
+        },
+        {
+            "username": "user3",
+            "password": "password3"
+        }
+    ]
+}
+```
+
 Installer les dépendences Node et builder le site
 ```bash 
 npm install
